@@ -50,3 +50,248 @@ table {
 }
 
 //Page styles
+
+$mint:  #B6CCC4;
+$dark-green: #336667;
+$tan: #EFD9BF;
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+
+h1{
+  font-size: 75px;
+  text-align: center;
+  line-height: 100px;
+  font-weight: 700;
+  margin: 0 auto 25px;
+}
+.container{
+  font-family: "Roboto", sans-serif;
+}
+#nav{
+  background-color: rgba(255,255,255,0.2);
+  height: 70px;
+  color: $dark-green;
+
+  #mobile-nav{
+    display: none;
+  }
+
+  #main-nav{
+    display: none;
+
+    @include responsive (tablet){
+      display: block;
+    }
+
+    ul{
+      display: flex;
+      flex-flow: row wrap;
+      justify: space-around;
+
+      li{
+        display: inline-block;
+        padding: 25px;
+        flex-grow: 1;
+        text-align: center;
+
+        a{
+          text-decoration: none;
+          color: $dark-green;
+
+          &:hover{
+            text-decoration: none;
+            color: $dark-green;
+          }
+
+          h4{
+            font-size: 18px;
+            font-weight: 700;
+          }
+        }
+
+        &#logo{
+          flex-grow: 2;
+          padding: 10px;
+
+          img{
+            width: 80px;
+            margin: auto;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+#hero{
+  height: 300px;
+  background-image: url("http://www.southeastdiscovery.com/myimages/bluffton-south-carolina.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#services{
+  background-color: #B6CCC4;
+  margin: 0 auto;
+  position: relative;
+  padding: 50px 0;
+  text-align: center;
+  color: #ffffff;
+
+  .services-icons{
+    .icon{
+      margin: 20px auto;
+
+      img{
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      h3{
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 30px;
+        padding: 15px 0;
+      }
+    }
+  }
+}
+#about{
+  color: $dark-green;
+  padding: 25px 0 50px;
+
+  p{
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 300;
+    margin: 0 auto 20px;
+  }
+}
+
+#logos{
+  background-color: $tan;
+  margin: 0 auto;
+  position: relative;
+  padding: 25px 0;
+
+  h1{
+    color: #ffffff;
+  }
+
+  .logo-icons{
+    .icon{
+      margin: 20px auto;
+      text-align: center;
+
+      img{
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+#people{
+  background-color: $mint;
+  padding: 25px 0 50px;
+  height: auto;
+
+  h1{
+    color: #ffffff;
+    margin: 0 auto 20px;
+  }
+
+  p{
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 300;
+    margin: 0 auto 15px;
+    color: #ffffff;
+  }
+
+  .person{
+    text-align: center;
+    color: white;
+
+    img{
+      width: 100%;
+      max-width: 300px;
+    }
+
+    h3{
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 30px;
+      padding: 15px 0;
+    }
+  }
+}
+
+
+#contact{
+  color: $dark-green;
+  padding: 25px 0 50px;
+
+  h3{
+    margin: 0 auto;
+    font-weight: 700;
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 7.5px 0;
+
+    @include responsive (tablet){
+      font-size: 22px;
+      line-height: 26px;
+      padding: 10px 0;
+      text-align: left;
+    }
+
+
+    @include responsive (desktop){
+      font-size: 26px;
+      padding: 15px 0;
+      line-height: 32px;
+    }
+  }
+}
+footer{
+  background-color: $mint;
+
+  #footer-nav{
+    ul{
+      display: flex;
+      flex-flow: column wrap;
+      justify: space-around;
+
+      @include responsive (tablet){
+        flex-flow: row wrap;
+      }
+
+      li{
+        display: inline-block;
+        flex-grow: 1;
+        font-size: 16px;
+        padding: 20px 0;
+        font-weight: 500;
+        color: #ffffff;
+        text-align: center;
+
+        @include responsive (tablet){
+          &:nth-of-type(1){
+            text-align: left;
+          }
+
+          &:nth-of-type(2){
+            text-align: center;
+          }
+
+          &:nth-of-type(3){
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,104 @@
 include includes/header.jade
 
-		div.container(ng-controller="mainCtrl")
+	section#nav
+		div.container
+			div#mobile-nav
+				ul
+					li Services
+					li About
+					li People
+					li Contact
+			div#main-nav
+				ul
+					li
+						a(href="#services")
+							h4 Services
+					li
+						a(href="#about")
+							h4 About
+					li#logo
+						img(src="images/logo.png")
+					li
+						a(href="#people")
+							h4 People
+					li
+						a(href="#contact")
+							h4 Contact
+	section#hero
+	section#services
+		div.container
+			h1 services
+			div.services-icons
+				div.col-xs-12.col-sm-3.icon
+					img(src="http://i.snewsi.com/user-orig.png")
+					h3 Real Estate Closings
+				div.col-xs-12.col-sm-3.icon
+					img(src="http://i.snewsi.com/user-orig.png")
+					h3 Real Estate Development
+				div.col-xs-12.col-sm-3.icon
+					img(src="http://i.snewsi.com/user-orig.png")
+					h3 Property Owners Associations
+				div.col-xs-12.col-sm-3.icon
+					img(src="http://i.snewsi.com/user-orig.png")
+					h3 Construction Defect Litigation
 
-			div#logo
-				h2 {{hello}}
-				img(src="images/o2TFLcS.jpg")
+	div#triangle
+	section#about
+		div.container
+			h1 about
+			p Founded in 1990 by long time Island resident John P. "Jack" Qualey, Jr., the Qualey Law firm concentrates its practice in real estate law, but handles civil litigation and corporate work as well.
+			p With a highly skilled team of one attorney and three paralegals, all with significant real estate training and experience, the Qualey Law firm can serve you in all areas of real estate law, including home closings, refinancing, title research and contracts.
+			p Buying a new home or property may be the largest financial decision you will ever make. It makes good sense to use a firm with experience and knowledge in the field of real estate law.
+	section#logos
+		div.container
+			div.logo-icons
+				div.col-xs-12.col-sm-3.icon
+					img(src="images/aba-logo.png")
+				div.col-xs-12.col-sm-3.icon
+					img(src="images/sc-bar-logo.png")
+				div.col-xs-12.col-sm-3.icon
+					img(src="images/arag-logo.png")
+				div.col-xs-12.col-sm-3.icon
+					img(src="http://i.snewsi.com/user-orig.png")
+	section#people
+		div.container
+			h1 people
+			div.col-xs-12.col-sm-4.person
+				img(src="http://www.qualeylaw.com/pict-jack.jpg")
+				h3 Jack P Qualey Jr.</br>Attorney
+			div.col-xs-12.col-sm-8
+				p A native of Charleston, South Carolina and a resident of Hilton Head Island since 1984, Jack Qualey is a graduate of Spring Hill College and the University of South Carolina School of Law.
+				p He is a former associate of the Charleston law firm of Bruist, Moore, Smythe & McGee, where he concentrated on real estate law. In 1982 he, joined the Hilton Head Company, a subsidiary of Marathon Petroleum Company, Inc.
+				p He formed his own firm in 1990. Since 1977 Jack's general practice areas have included residential and commercial real estate transactions, property owners associations and corporate and zoning matters. He is admitted to practice in South Carolina and Georgia.
+				p A former member of the Hilton Head Planning Commission, Qualey is a past president of the Hilton Head Island Jaycees and of the local unit of the American Cancer Society and a founder of the Exchange Club. He and his wife Jana have two children, Megan and John Patrick, III.
+				p Qualey is a member of the South Carolina chapter of Community Association Institute, legal counsel for the Hilton Head Multiple Listing Service, and serves on the Vestry at St. Luke Episcopal Church.A member of the South Carolina Bar, Qualey is also a member of the American Bar Association and the Beaufort County Bar Association.
+			div.col-xs-12.col-sm-4.person
+				img(src="http://i.snewsi.com/user-orig.png")
+				h3 Jana Qualey</br>???
+			div.col-xs-12.col-sm-4.person
+				img(src="http://i.snewsi.com/user-orig.png")
+				h3 Patti House</br>Parallegal
+			div.col-xs-12.col-sm-4.person
+				img(src="http://i.snewsi.com/user-orig.png")
+				h3 Brooke Messenger</br>Parallegal
+	section#contact
+		div.container
+			h1 contact
+			div.col-xs-12.col-sm-6
+				h3 XXX.XXX.XXXX
+				h3 181 Bluffton Road, Suite F102</br>Magnolia Village Business Park</br> Bluffton, SC 29910
+				h3 jack.qualey@qualeylaw.com
+			div.col-xs-12.col-sm-6
+				h1 FORM
+	section#map
+	footer
+		div.container
+			div#footer-nav
+				ul
+					li Terms/Conditions
+					li &copy; 2016 Qualey Law
+					li Website By Avery Thomas
+
 
 include includes/footer.jade
 
