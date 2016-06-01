@@ -66,13 +66,174 @@ h1{
 .container{
   font-family: "Roboto", sans-serif;
 }
+
+body{
+  position: relative;
+}
+
 #nav{
-  background-color: rgba(255,255,255,0.2);
-  height: 70px;
+  background-color: rgba(255,255,255,0.7);
+  height: 50px;
   color: $dark-green;
+  width: 100%;
+  position: absolute;
+  top: 0;
+
+  @include responsive (tablet){
+    height: 80px;
+  }
 
   #mobile-nav{
-    display: none;
+
+    #mobile-logo{
+      padding: 7px 10px;
+      display: inline-block;
+
+      img{
+        width: 55px;
+        margin: 0;
+        display: block;
+      }
+    }
+
+    #hamburger-toggle{
+      float: right;
+      display: inline-block;
+      padding: 15px 10px;
+      h4{
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      #hamburger{
+        display: none;
+      }
+
+      $lineWidth: 5px;
+      $lineLength: 25px;
+      $baseMargin: 8px;
+      $animationDuration: .2s;
+
+      .menuicon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        display: block;
+        cursor: pointer;
+        color: $dark-green;
+        height: $baseMargin*2 + $lineWidth;
+        width: $lineLength;
+        span {
+          display: block;
+          top: $baseMargin;
+          width: $lineLength;
+          height: $lineWidth;
+          background-color: $dark-green;
+          position: relative;
+          -webkit-transition-duration: 0;
+          -moz-transition-duration: 0;
+          -ms-transition-duration: 0;
+          -o-transition-duration: 0;
+          transition-duration: 0;
+          -webkit-transition-delay: $animationDuration;
+          -moz-transition-delay: $animationDuration;
+          -ms-transition-delay: $animationDuration;
+          -o-transition-delay: $animationDuration;
+          transition-delay: $animationDuration;
+          &::after, &::before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: $lineLength;
+            height: $lineWidth;
+            background-color: $dark-green;
+            -webkit-transition-property: margin, -webkit-transform;
+            -webkit-transition-duration: $animationDuration;
+            -moz-transition-duration: $animationDuration;
+            -ms-transition-duration: $animationDuration;
+            -o-transition-duration: $animationDuration;
+            transition-duration: $animationDuration;
+            -webkit-transition-delay: $animationDuration, 0;
+            -moz-transition-delay: $animationDuration, 0;
+            -ms-transition-delay: $animationDuration, 0;
+            -o-transition-delay: $animationDuration, 0;
+            transition-delay: $animationDuration, 0;
+          }
+          &::before {
+            margin-top: -$baseMargin;
+          }
+          &::after {
+            margin-top: $baseMargin;
+          }
+        }
+      }
+
+      /**#hamburger:not(checked) ~ #mobile-ul {
+        display: none;
+      }**/
+
+      #hamburger:checked ~ #mobile-ul {
+        display: block;
+      }
+
+      #hamburger:checked ~ .menuicon {
+        span {
+          background-color: rgba(0,0,0,0);
+          &::before, &::after {
+            margin-top: 0;
+            -webkit-transition-delay: 0, $animationDuration;
+            -moz-transition-delay: 0, $animationDuration;
+            -ms-transition-delay: 0, $animationDuration;
+            -o-transition-delay: 0, $animationDuration;
+            transition-delay: 0, $animationDuration;
+          }
+          &::before {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+          &::after {
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    #mobile-ul{
+      background-color: rgba(255,255,255,0.9);
+      width: 100%;
+      margin: 0 auto;
+      display: none;
+      position: relative;
+      top: -12px;
+
+      ul{
+        li{
+          width: 100%;
+          display: inline-block;
+          margin: 0 auto;
+          padding: 10px 40px;
+
+          a{
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            color:$dark-green;
+          }
+        }
+      }
+    }
+
+    @include responsive (tablet){
+      display: none;
+    }
   }
 
   #main-nav{
@@ -103,7 +264,7 @@ h1{
           }
 
           h4{
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 700;
           }
         }
@@ -113,7 +274,7 @@ h1{
           padding: 10px;
 
           img{
-            width: 80px;
+            width: 100px;
             margin: auto;
             display: block;
           }
@@ -143,16 +304,27 @@ h1{
       margin: 20px auto;
 
       img{
-        max-width: 320px;
         width: 100%;
+        max-width: 190px;
         margin: 0 auto;
+
+        @include responsive (tablet){
+          height: 150px;
+          width: auto;
+          max-width: 150px;
+        }
+
+        @include responsive (desktop){
+          height: 175px;
+          max-width: 200px;
+        }
       }
 
       h3{
         font-size: 26px;
         font-weight: 500;
         line-height: 30px;
-        padding: 15px 0;
+        padding: 30px 0;
       }
     }
   }
@@ -213,10 +385,15 @@ h1{
   .person{
     text-align: center;
     color: white;
+    padding: 35px 0;
+
+    &:first-of-type{
+      padding: 0;
+    }
 
     img{
       width: 100%;
-      max-width: 300px;
+      max-width: 200px;
     }
 
     h3{

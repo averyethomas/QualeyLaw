@@ -3,11 +3,28 @@ include includes/header.jade
 	section#nav
 		div.container
 			div#mobile-nav
-				ul
-					li Services
-					li About
-					li People
-					li Contact
+				div#mobile-logo
+					img(src="images/logo.png")
+
+				div#hamburger-toggle
+					input(type="checkbox" value="selected" id="hamburger")
+					label(class="menuicon" for="hamburger")
+						<span></span>
+					div#mobile-ul
+						ul
+							li
+								a(href="#services")
+									h4 Services
+							li
+								a(href="#about")
+									h4 About
+							li
+								a(href="#people")
+									h4 People
+							li
+								a(href="#contact")
+									h4 Contact
+
 			div#main-nav
 				ul
 					li
@@ -30,16 +47,16 @@ include includes/header.jade
 			h1 services
 			div.services-icons
 				div.col-xs-12.col-sm-3.icon
-					img(src="http://i.snewsi.com/user-orig.png")
+					img(src="images/real-estate-closings.png")
 					h3 Real Estate Closings
 				div.col-xs-12.col-sm-3.icon
-					img(src="http://i.snewsi.com/user-orig.png")
+					img(src="images/real-estate-development.png")
 					h3 Real Estate Development
 				div.col-xs-12.col-sm-3.icon
-					img(src="http://i.snewsi.com/user-orig.png")
+					img(src="images/poa.png")
 					h3 Property Owners Associations
 				div.col-xs-12.col-sm-3.icon
-					img(src="http://i.snewsi.com/user-orig.png")
+					img(src="images/construction.png")
 					h3 Construction Defect Litigation
 
 	div#triangle
