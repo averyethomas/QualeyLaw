@@ -329,6 +329,9 @@ body{
     }
   }
 }
+#triangle{
+}
+
 #about{
   color: $dark-green;
   padding: 25px 0 50px;
@@ -343,23 +346,19 @@ body{
 
 #logos{
   background-color: $tan;
-  margin: 0 auto;
-  position: relative;
   padding: 25px 0;
 
-  h1{
-    color: #ffffff;
-  }
-
   .logo-icons{
+
     .icon{
-      margin: 20px auto;
       text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 20px;
+      height: auto;
 
       img{
-        max-width: 320px;
-        width: 100%;
-        margin: 0 auto;
+        width: 150px;
       }
     }
   }
