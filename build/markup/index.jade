@@ -59,7 +59,7 @@ include includes/header.jade
 					img(src="images/construction.png")
 					h3 Construction Defect Litigation
 
-	div#triangle
+	div#triangle.big-triangle
 	section#about
 		div.container
 			h1 about
@@ -98,6 +98,9 @@ include includes/header.jade
 			div.col-xs-12.col-sm-4.person
 				img(src="http://i.snewsi.com/user-orig.png")
 				h3 Brooke Messenger</br>Parallegal
+			div.col-xs-12.group-photo
+				img(src="images/group-photo.JPG")
+
 	section#contact
 		div.container
 			h1 contact
@@ -112,9 +115,13 @@ include includes/header.jade
 		div.container
 			div#footer-nav
 				ul
-					li Terms/Conditions
+					li
+						a(href="#hero")
+							p Top of the Page
 					li &copy; 2016 Qualey Law
-					li Website By Avery Thomas
+					li
+						a(href="http://averyethomas.com" target="_blank")
+							p Website By Avery Thomas
 
 
 include includes/footer.jade
